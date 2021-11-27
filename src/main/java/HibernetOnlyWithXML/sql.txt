@@ -1,0 +1,22 @@
+create table students(
+     `student_id` int(11) NOT NULL,
+     `student_name` varchar(50) DEFAULT NULL,
+     PRIMARY KEY(`student_id`)
+     );
+
+create table course(
+     `course_id` int(11) NOT NULL,
+     `course_name` varchar(50) DEFAULT NULL,
+      PRIMARY KEY(`course_id`)
+      );
+
+ create table course_student(
+      `student_id` int(11) NOT NULL,
+      `course_id` int(11) NOT NULL,
+       PRIMARY KEY(`student_id`,`course_id`),
+       FOREIGN KEY (`student_id`) REFERENCES `students`(`student_id`),
+       FOREIGN KEY(`course_id`) REFERENCES `course`(`course_id`)
+       );
+
+
+
